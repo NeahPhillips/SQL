@@ -25,18 +25,20 @@ VALUES
     (12, 'Wireless Earbuds', 'Electronics', 49.99, 75, 4.3),
 #For this project, I used SQL to query the Superstore database to get information about items sold at the store and their prices. 
 
-#Use a SELECT statement to order items by price
+-- order all items by price high to low--
 SELECT *
 FROM superstore
-WHERE price
-ORDER BY price desc;
+ORDER BY price DESC;
 
-#Show a statistic about stock quantity
-SELECT SUM(stock_quantity)
-FROM superstore
-WHERE stock_quantity;
+-- the sum of all items at superstore--
+SELECT SUM(price)
+FROM superstore;
 
-#show a statistic about stock quantity of air purifiers
-SELECT SUM(stock_quantity)
+--the minimun price for a kithen supply--
+SELECT MIN(price) 'Kitchen Supplies'
+FROM superstore;
+
+--how many wireless bluetooth speakers are in stock--
+SELECT stock_quantity
 FROM superstore
-WHERE item_id="9";
+WHERE item_name='Wireless Bluetooth Speaker';
